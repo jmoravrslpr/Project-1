@@ -83,7 +83,8 @@ Install Docker,facilitates instalation of containers and Python-pip. Install Doc
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-[Uploading docker ps.jpg…]()
+![docker ps](https://user-images.githubusercontent.com/97639303/177424896-2810fe77-60fa-40b9-a486-9ad46beb3a04.jpg)
+
 
 
 ### Target Machines & Beats
