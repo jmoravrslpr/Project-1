@@ -41,44 +41,49 @@ Metricbeat Collects data to help with the assesment an operational state of the 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| Web-1    |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| JumpBox | Gateway   | 10.0.0.1 | Linux UBUNTU 18.4 |
+|---------|-----------|----------|-------------------|
+| WEB1    | DVWA      | 10.0.0.5 | Linux UBUNTU 18.4 |
+| WEB2    | DVWA      | 10.0.0.7 | Linux UBUNTU 18.4 |
+| ELKVM   | ELK Stack | 10.2.0.4 | Linux UBUNTU 18.4 |
+|         |           |          |                   |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the JUMP-BOX-PROVISIONER machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+User workstation local IP address through the SSH PORT22.
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by JUMP-BOX MACHINE.
+JUMP-BOX IP:10.0.0.1
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+|   Name   | Publicly Accessible | Allowed IP Addresses |   |
+|:--------:|:-------------------:|:--------------------:|---|
+| Jump Box | Yes                 | SSH via Admin's IP   |   |
+| WEB1     | No                  | 10.0.0.5             |   |
+| WEB2     | No                  | 10.0.0.7             |   |
+| ELK      | No                  | 10.2.0.4             |   |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it will ensure less chances for mistakes.
+
+ansible.yml
+
+ansibleinstall-elk.yml.TXT
+
+The ansible playbook allows for the implenation and inital setup much more efficient and easliy replicable to addional machines in the furutre. Imaging a machine in much more effcient. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+
+Install Docker,facilitates instalation of containers and Python-pip. Install Docker Python Module Increases Virtual Memory and launches a the ELK container with the ports 5601, 9200, 5044.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
