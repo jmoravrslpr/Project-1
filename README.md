@@ -89,10 +89,16 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+WEB-1 10.0.0.5
+WEB-2 10.0.0.7
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+
+filebeat-playbook.yml.TXT
+![module status](https://user-images.githubusercontent.com/97639303/177425478-c42bc32d-ae7e-48c5-bbcc-45a776096e8e.jpg)
+
+metricbeat-playbook.TXT
+![mod stat](https://user-images.githubusercontent.com/97639303/177425623-933b19cd-7b9c-4026-8db4-bbcadf16bfaf.jpg)
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
